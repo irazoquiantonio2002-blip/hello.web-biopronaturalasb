@@ -1,7 +1,7 @@
 :root {
-  --black: #1A1A1A;
-  --black-2: #0f0f0f;
-  --ink: #080808;
+  --black: #262229;
+  --black-2: #1c1a1f;
+  --ink: #141216;
   --pink: #D72B7F;
   --pink-2: #FF75B7;
   --pink-3: #ffb3d5;
@@ -11,10 +11,10 @@
   --silver: #C0C0C0;
   --silver-2: #f2f2f2;
   --white: #FFFFFF;
-  --muted: rgba(255,255,255,.72);
-  --soft: rgba(255,255,255,.09);
+  --muted: rgba(255,255,255,.76);
+  --soft: rgba(255,255,255,.12);
   --line: rgba(215,43,127,.32);
-  --shadow: 0 24px 80px rgba(0,0,0,.52);
+  --shadow: 0 24px 80px rgba(0,0,0,.38);
   --radius: 8px;
   --font-head: "Montserrat", system-ui, sans-serif;
   --font-body: "Open Sans", system-ui, sans-serif;
@@ -27,9 +27,9 @@ body {
   font-family: var(--font-body);
   color: var(--white);
   background:
-    radial-gradient(circle at 18% 8%, rgba(215,43,127,.18), transparent 32%),
-    radial-gradient(circle at 84% 22%, rgba(212,175,55,.10), transparent 30%),
-    linear-gradient(180deg, #080407 0%, var(--black) 38%, #120812 100%);
+    radial-gradient(circle at 18% 8%, rgba(215,43,127,.22), transparent 32%),
+    radial-gradient(circle at 84% 22%, rgba(212,175,55,.14), transparent 30%),
+    linear-gradient(180deg, #191418 0%, var(--black) 38%, #241a24 100%);
   overflow-x: hidden;
 }
 
@@ -96,7 +96,7 @@ button, input, textarea, select { font: inherit; }
   place-items: center;
   background:
     linear-gradient(140deg, rgba(215,43,127,.2), transparent 34%),
-    radial-gradient(circle at center, #321122 0%, #090509 58%, #000 100%);
+    radial-gradient(circle at center, #3d1a2c 0%, #19141a 58%, #0e0e0e 100%);
   transition: opacity .9s ease, visibility .9s ease;
 }
 
@@ -218,14 +218,14 @@ button, input, textarea, select { font: inherit; }
   right: 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(255,255,255,.07);
-  background: rgba(10,10,10,.55);
+  background: rgba(32,28,32,.55);
   backdrop-filter: blur(18px);
   transition: background .35s ease, box-shadow .35s ease;
 }
 
 #navbar.scrolled {
-  background: rgba(8,8,8,.9);
-  box-shadow: 0 16px 50px rgba(0,0,0,.34);
+  background: rgba(26,23,26,.9);
+  box-shadow: 0 16px 50px rgba(0,0,0,.3);
 }
 
 .nav-inner {
@@ -371,7 +371,7 @@ button, input, textarea, select { font: inherit; }
 #mob-menu {
   display: none;
   border-top: 1px solid rgba(255,255,255,.08);
-  background: rgba(8,8,8,.96);
+  background: rgba(24,22,24,.96);
 }
 
 #mob-menu a {
@@ -400,7 +400,7 @@ button, input, textarea, select { font: inherit; }
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  opacity: .58;
+  opacity: .66;
   transform: scale(1.04);
 }
 
@@ -413,15 +413,15 @@ button, input, textarea, select { font: inherit; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.82) 42%, rgba(0,0,0,.42) 100%),
+    linear-gradient(90deg, rgba(14,10,14,.86) 0%, rgba(14,10,14,.66) 42%, rgba(14,10,14,.28) 100%),
     radial-gradient(circle at 78% 36%, rgba(215,43,127,.28), transparent 30%),
-    radial-gradient(circle at 18% 70%, rgba(212,175,55,.12), transparent 26%);
+    radial-gradient(circle at 18% 70%, rgba(212,175,55,.14), transparent 26%);
 }
 
 .hero-vignette {
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 180px rgba(0,0,0,.95);
+  box-shadow: inset 0 0 180px rgba(0,0,0,.55);
 }
 
 .hero-grid {
@@ -630,7 +630,7 @@ button, input, textarea, select { font: inherit; }
 .marquee {
   overflow: hidden;
   border-block: 1px solid rgba(212,175,55,.18);
-  background: rgba(255,255,255,.035);
+  background: rgba(255,255,255,.05);
 }
 
 .marquee-inner {
@@ -651,8 +651,8 @@ button, input, textarea, select { font: inherit; }
 .conversion-strip {
   padding: 44px 0;
   background:
-    radial-gradient(circle at 12% 50%, rgba(215,43,127,.28), transparent 30%),
-    linear-gradient(90deg, #13070f 0%, #0a0a0a 48%, #230b18 100%);
+    radial-gradient(circle at 12% 50%, rgba(215,43,127,.3), transparent 30%),
+    linear-gradient(90deg, #241019 0%, #1a181a 48%, #34101f 100%);
   border-bottom: 1px solid rgba(255,117,183,.2);
 }
 
@@ -714,8 +714,8 @@ section {
 #ambientes,
 #sectores {
   background:
-    radial-gradient(circle at 88% 10%, rgba(255,117,183,.14), transparent 34%),
-    linear-gradient(180deg, #080808, #170812);
+    radial-gradient(circle at 88% 10%, rgba(255,117,183,.16), transparent 34%),
+    linear-gradient(180deg, #191719, #291c26);
 }
 
 .why-header,
@@ -755,8 +755,8 @@ section {
 .gallery-card,
 .contact-info,
 .contact-form-wrap {
-  border: 1px solid rgba(255,255,255,.12);
-  background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+  border: 1px solid rgba(255,255,255,.14);
+  background: linear-gradient(145deg, rgba(255,255,255,.11), rgba(255,255,255,.04));
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
@@ -847,7 +847,7 @@ section {
   justify-content: end;
   padding: 26px;
   background:
-    linear-gradient(180deg, transparent 18%, rgba(0,0,0,.42) 48%, rgba(0,0,0,.92) 100%),
+    linear-gradient(180deg, transparent 18%, rgba(10,8,10,.32) 48%, rgba(10,8,10,.78) 100%),
     radial-gradient(circle at 20% 18%, rgba(215,43,127,.28), transparent 24%);
 }
 
@@ -888,7 +888,7 @@ section {
 .process-bg {
   background-image: url("../assets/confianza.jpg");
   background-position: center 30%;
-  opacity: .18;
+  opacity: .28;
 }
 
 .proceso-grid {
@@ -991,7 +991,7 @@ section {
 .spec-cell {
   min-height: 92px;
   padding: 16px;
-  background: rgba(11,11,11,.86);
+  background: rgba(34,30,34,.8);
   display: grid;
   align-content: center;
   gap: 6px;
@@ -1027,7 +1027,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.78));
+  background: linear-gradient(180deg, rgba(10,8,10,.12), rgba(10,8,10,.6));
   z-index: 1;
 }
 
@@ -1101,7 +1101,7 @@ section {
   gap: 10px;
   padding: 12px 14px;
   color: rgba(255,255,255,.8);
-  background: rgba(0,0,0,.56);
+  background: rgba(32,28,32,.58);
   border: 1px solid rgba(255,255,255,.16);
   border-radius: var(--radius);
   backdrop-filter: blur(18px);
@@ -1135,7 +1135,7 @@ section {
   place-items: center;
   text-align: center;
   padding: 22px;
-  background: rgba(9,9,9,.72);
+  background: rgba(32,28,32,.62);
 }
 
 .stat-num {
@@ -1194,7 +1194,7 @@ section {
 .gallery-bg {
   background-image: url("../assets/oem-odm.jpg");
   background-position: center 20%;
-  opacity: .18;
+  opacity: .28;
   z-index: -2;
 }
 
@@ -1289,7 +1289,7 @@ section {
 
 .contact-info {
   background:
-    linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.94)),
+    linear-gradient(180deg, rgba(24,20,24,.6), rgba(24,20,24,.82)),
     url("../assets/confianza.jpg") center/cover fixed;
 }
 
@@ -1333,7 +1333,7 @@ section {
 }
 
 .contact-form-wrap {
-  background: rgba(255,255,255,.045);
+  background: rgba(255,255,255,.06);
 }
 
 .form-row {
@@ -1357,7 +1357,7 @@ section {
   min-height: 52px;
   padding: 14px 14px;
   color: var(--white);
-  background: rgba(0,0,0,.34);
+  background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.14);
   border-radius: var(--radius);
   outline: none;
@@ -1408,7 +1408,7 @@ textarea.form-control { resize: vertical; min-height: 126px; }
   bottom: 14px;
   max-width: min(520px, calc(100% - 28px));
   padding: 10px 12px;
-  background: rgba(0,0,0,.72);
+  background: rgba(32,28,32,.68);
   color: rgba(255,255,255,.76);
   border: 1px solid rgba(255,255,255,.16);
   border-radius: var(--radius);
@@ -1418,7 +1418,7 @@ textarea.form-control { resize: vertical; min-height: 126px; }
 /* Footer */
 footer {
   padding: 46px 0 26px;
-  background: #070707;
+  background: #171417;
   border-top: 1px solid rgba(212,175,55,.18);
 }
 
