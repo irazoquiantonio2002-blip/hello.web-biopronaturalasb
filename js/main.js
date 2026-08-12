@@ -171,6 +171,70 @@ function createParticles(canvas, density = 70) {
 createParticles(document.getElementById("hero-canvas"), 90);
 document.querySelectorAll(".section-particles").forEach((canvas) => createParticles(canvas, 42));
 
+const marcasTrack = document.getElementById("marcasTrack");
+if (marcasTrack) {
+  const slides = Array.from(marcasTrack.children);
+  const prevBtn = document.getElementById("marcasPrev");
+  const nextBtn = document.getElementById("marcasNext");
+  const dotsWrap = document.getElementById("marcasDots");
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "carousel-dot";
+    dot.setAttribute("aria-label", `Ir a la marca ${i + 1} de ${slides.length}`);
+    dot.addEventListener("click", () => {
+      slides[i].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    });
+    dotsWrap?.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap?.children || []);
+
+  const updateActiveDot = () => {
+    const trackLeft = marcasTrack.getBoundingClientRect().left;
+    let closest = 0;
+    let closestDist = Infinity;
+    slides.forEach((slide, i) => {
+      const dist = Math.abs(slide.getBoundingClientRect().left - trackLeft);
+      if (dist < closestDist) { closestDist = dist; closest = i; }
+    });
+    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === closest));
+  };
+
+  let scrollTimer = 0;
+  marcasTrack.addEventListener("scroll", () => {
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(updateActiveDot, 90);
+  }, { passive: true });
+
+  const scrollByCard = (dir) => {
+    const gap = 20;
+    const amount = (slides[0].getBoundingClientRect().width + gap) * dir;
+    marcasTrack.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  prevBtn?.addEventListener("click", () => scrollByCard(-1));
+  nextBtn?.addEventListener("click", () => scrollByCard(1));
+
+  updateActiveDot();
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!prefersReducedMotion) {
+    let autoplay = window.setInterval(() => {
+      const atEnd = marcasTrack.scrollLeft + marcasTrack.clientWidth >= marcasTrack.scrollWidth - 4;
+      if (atEnd) {
+        marcasTrack.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        scrollByCard(1);
+      }
+    }, 4200);
+
+    ["mouseenter", "touchstart", "focusin"].forEach((evt) => {
+      marcasTrack.addEventListener(evt, () => window.clearInterval(autoplay), { passive: true });
+    });
+  }
+}
+
 const form = document.getElementById("wa-form");
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -187,7 +251,7 @@ form?.addEventListener("submit", (event) => {
 
   const text = [
     `Hola Karla, soy ${name}.`,
-    `Quiero crear mi propia marca con Biopronatura Lasb.`,
+    `Quiero crear mi propia marca con Biopronatura Lab.`,
     `Linea de interes: ${interest}.`,
     phone ? `Mi WhatsApp: ${phone}.` : "",
     qty ? `Cantidad estimada: ${qty}.` : "",

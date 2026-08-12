@@ -1232,6 +1232,115 @@ section {
   font-size: 14px;
 }
 
+/* Brands carousel */
+.marcas-carousel {
+  position: relative;
+  margin-top: 12px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 4px 4px 14px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-slide {
+  flex: 0 0 auto;
+  width: min(320px, 78vw);
+  margin: 0;
+  scroll-snap-align: start;
+  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, border-color .3s ease;
+}
+
+.carousel-slide:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,117,183,.5);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  filter: saturate(.95) contrast(1.06);
+}
+
+.carousel-slide figcaption {
+  padding: 16px 18px;
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.carousel-slide figcaption strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: 15px;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.carousel-btn {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.06);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,117,183,.55);
+  background: rgba(215,43,127,.14);
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.24);
+  cursor: pointer;
+  transition: background .25s ease, transform .25s ease;
+}
+
+.carousel-dot.is-active {
+  background: var(--pink-2);
+  transform: scale(1.35);
+}
+
 /* Testimonial */
 .testimonial-wrap {
   display: grid;
@@ -1637,6 +1746,8 @@ footer {
   .jar-b { right: 6%; }
   .bottle { right: 35%; }
   .wa-btn { width: 56px; height: 56px; right: 16px; bottom: 16px; }
+  .carousel-slide { width: 84vw; }
+  .carousel-slide img { height: 260px; }
 }
 
 @media (max-width: 460px) {
